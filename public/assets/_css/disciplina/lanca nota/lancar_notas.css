@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  background: #f5f5f5;
+}
+
+/* MENU LATERAL */
+.menu-lateral {
+  width: 220px;
+  background: #2c3e50;
+  color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.menu-lateral h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-lateral ul li {
+  margin: 15px 0;
+}
+
+.menu-lateral ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-lateral ul li.active a {
+  font-weight: bold;
+  color: #1abc9c;
+}
+
+/* CONTEÚDO */
+.conteudo {
+  flex: 1;
+  padding: 20px;
+}
+
+header h1 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.filtros {
+  margin-bottom: 20px;
+}
+
+.filtros select, .filtros button {
+  margin-right: 10px;
+  padding: 8px;
+}
+
+.tabela-notas table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.tabela-notas th, .tabela-notas td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.acoes {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.btn.salvar {
+  background: #27ae60;
+  color: #fff;
+}
+
+.btn.pdf {
+  background: #c0392b;
+  color: #fff;
+}
+
+.btn.excel {
+  background: #2980b9;
+  color: #fff;
+}

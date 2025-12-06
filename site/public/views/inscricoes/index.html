@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscrições - Escola</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    header {
+      background: green;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    nav button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background: #008000;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    nav button:hover {
+      background: #005500;
+    }
+    .section {
+      display: none;
+      padding: 20px;
+      background: white;
+      margin: 10px auto;
+      max-width: 900px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .active {
+      display: block;
+    }
+    form {
+      display: grid;
+      gap: 15px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      text-align: center;
+    }
+    .day {
+      padding: 20px;
+      background: #e8ffe8;
+      border-radius: 5px;
+    }
+    .day.header {
+      font-weight: bold;
+      background: #c0ffc0;
+    }
+    button.submit {
+      background: green;
+      color: white;
+      font-size: 16px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button.submit:hover {
+      background: darkgreen;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Portal de Inscrição de Alunos</h1>
+  </header>
+
+  <nav>
+    <button onclick="showSection('conteudo')">Ver Conteúdo</button>
+    <button onclick="showSection('calendario')">Ver Calendário</button>
+    <button onclick="showSection('inscricao')">Formulário de Inscrição</button>
+  </nav>
+
+  <!-- Conteúdo -->
+  <section id="conteudo" class="section active">
+    <h2>Conteúdo da Escola</h2>
+    <p>Aqui podes acessar informações sobre a escola, cursos disponíveis e regulamentos.</p>
+    <ul>
+      <li>Curso de Informática</li>
+      <li>Curso de Contabilidade de Gestão</li>
+      <li>Curso de Gestão Empresarial</li>
+      <li>Curso de Informática e Sistemas Multimédia</li>
+    </ul>
+  </section>
+
+  <!-- Calendário -->
+  <section id="calendario" class="section">
+    <h2>Calendário de Actividades</h2>
+    <div class="calendar">
+      <div class="day header">Dom</div>
+      <div class="day header">Seg</div>
+      <div class="day header">Ter</div>
+      <div class="day header">Qua</div>
+      <div class="day header">Qui</div>
+      <div class="day header">Sex</div>
+      <div class="day header">Sáb</div>
+      <div class="day">1</div>
+      <div class="day">2</div>
+      <div class="day">3</div>
+      <div class="day">4</div>
+      <div class="day">5</div>
+      <div class="day">6</div>
+      <div class="day">7</div>
+      <div class="day">8</div>
+      <div class="day">9</div>
+      <div class="day">10</div>
+      <!-- podes continuar preenchendo o calendário -->
+    </div>
+  </section>
+
+  <!-- Inscrição -->
+  <section id="inscricao" class="section">
+    <h2>Formulário de Inscrição</h2>
+    <form id="formInscricao">
+      <label>Nome Completo</label>
+      <input type="text" required>
+
+      <label>Identificação (BI/Passaporte)</label>
+      <input type="text" required>
+
+      <label>Gênero</label>
+      <select required>
+        <option value="">Selecione</option>
+        <option>Masculino</option>
+        <option>Feminino</option>
+      </select>
+
+      <label>Data de Nascimento</label>
+      <input type="date" required>
+
+      <label>Nacionalidade</label>
+      <input type="text" required>
+
+      <label>Município de Residência</label>
+      <input type="text" required>
+
+      <label>Telefone</label>
+      <input type="tel" required>
+
+      <label>Escola Anterior</label>
+      <input type="text" required>
+
+      <label>Média</label>
+      <input type="number" step="0.01" required>
+
+      <label>Ano de Conclusão</label>
+      <input type="number" required>
+
+      <label>1ª Opção de Curso</label>
+      <input type="text" required>
+
+      <label>2ª Opção de Curso</label>
+      <input type="text" required>
+
+      <label>Upload do BI (PDF)</label>
+      <input type="file" accept=".pdf" required>
+
+      <label>Upload do Certificado (PDF)</label>
+      <input type="file" accept=".pdf" required>
+
+      <button type="submit" class="submit">Enviar Inscrição</button>
+    </form>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    document.getElementById('formInscricao').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("Inscrição enviada com sucesso!");
+    });
+  </script>
+
+</body>
+</html>

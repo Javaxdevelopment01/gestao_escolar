@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infraestruturas - Nossa Instituição</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Efeitos personalizados */
+        .card-hover {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 100, 0, 0.1), 0 10px 10px -5px rgba(0, 100, 0, 0.04);
+        }
+        
+        .slide-in {
+            animation: slideIn 0.5s ease-out forwards;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+            }
+        }
+        
+        /* Slider personalizado */
+        .slider {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 100, 0, 0.4);
+        }
+        
+        /* Efeito de onda */
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        
+        .wave svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+        }
+        
+        .wave .shape-fill {
+            fill: #FFFFFF;
+        }
+    </style>
+</head>
+<body class="font-sans bg-white">
+    <!-- Header/Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-50" >
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-3">
+                    NI
+                </div>
+                <h1 class="text-xl font-bold text-green-800">Nossa Instituição</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="../site.html" class="text-green-800 hover:text-green-600 font-medium">Home</a>
+                <a href="#" class="text-green-600 font-bold border-b-2 border-green-600">Infraestruturas</a>
+                
+            </nav>
+            
+            <button class="md:hidden text-green-800">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Slider Hero Section -->
+    <section class="slider relative">
+        <!-- Slide 1 -->
+        <div class="slide active" style="background-image: url('../img/eu.JPG')">
+            <div class="slide-overlay"></div>
+            <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+                <div class="text-white max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 slide-in">Nossas Infraestruturas</h1>
+                    <p class="text-xl md:text-2xl mb-8 slide-in" style="animation-delay: 0.2s">Ambientes modernos e equipados para excelência no ensino</p>
+                    <a href="#infraestruturas" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full inline-block slide-in" style="animation-delay: 0.4s">
+                        Conheça Mais <i class="fas fa-arrow-down ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="slide" style="background-image: url('../img/leonelfixe.JPG')">
+            <div class="slide-overlay"></div>
+            <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+                <div class="text-white max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Salas de Aula Modernas</h1>
+                    <p class="text-xl md:text-2xl mb-8">Equipadas com tecnologia de ponta para melhor aprendizagem</p>
+                    <a href="#salas" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full inline-block">
+                        Ver Salas <i class="fas fa-chalkboard ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="slide" style="background-image: url('../img/foto-imp.jpg')">
+            <div class="slide-overlay"></div>
+            <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+                <div class="text-white max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Salas de Aula Modernas</h1>
+                    <p class="text-xl md:text-2xl mb-8">Equipadas com tecnologia de ponta para melhor aprendizagem</p>
+                    <a href="#salas" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full inline-block">
+                        Ver Salas <i class="fas fa-chalkboard ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="slide" style="background-image: url('../img/eltonfixe.JPG')">
+            <div class="slide-overlay"></div>
+            <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+                <div class="text-white max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Salas de Aula Modernas</h1>
+                    <p class="text-xl md:text-2xl mb-8">Equipadas com tecnologia de ponta para melhor aprendizagem</p>
+                    <a href="#salas" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full inline-block">
+                        Ver Salas <i class="fas fa-chalkboard ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="slide" style="background-image: url('../img/naescola.JPG')">
+            <div class="slide-overlay"></div>
+            <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+                <div class="text-white max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Áreas Desportivas</h1>
+                    <p class="text-xl md:text-2xl mb-8">Promovendo saúde e bem-estar através do desporto</p>
+                    <a href="#quadra" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full inline-block">
+                        Ver Quadras <i class="fas fa-running ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Controles do slider -->
+        <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-30 text-green-800 p-3 rounded-full hover:bg-opacity-50 z-10">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-30 text-green-800 p-3 rounded-full hover:bg-opacity-50 z-10">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <!-- Indicadores do slider -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+            <button class="w-3 h-3 rounded-full bg-white bg-opacity-70 hover:bg-opacity-100 active"></button>
+            <button class="w-3 h-3 rounded-full bg-white bg-opacity-70 hover:bg-opacity-100"></button>
+            <button class="w-3 h-3 rounded-full bg-white bg-opacity-70 hover:bg-opacity-100"></button>
+        </div>
+        
+        <!-- Efeito de onda no final do slider -->
+        <div class="wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Seção de Infraestruturas -->
+    <section id="infraestruturas" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Nossas Infraestruturas</h2>
+                <div class="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Conheça os espaços modernos e bem equipados que oferecemos para proporcionar a melhor experiência de aprendizagem e desenvolvimento para nossos alunos.
+                </p>
+            </div>
+            
+            <!-- Cards de Infraestruturas -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Sala de Aula -->
+                <div id="salas" class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" 
+                             alt="Salas de Aula" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            <i class="fas fa-chalkboard mr-2"></i> Educação
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-green-800 mb-2">Salas de Aula</h3>
+                        <p class="text-gray-600 mb-4">
+                            Salas climatizadas, equipadas com projetores, quadros interativos e mobiliário ergonômico para garantir o conforto e melhor aprendizagem.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Wi-Fi</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Ar Condicionado</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Projetor</span>
+                        </div>
+                        <a href="#" class="text-green-600 font-medium hover:text-green-800 inline-flex items-center">
+                            Ver mais fotos <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Laboratórios -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Laboratórios" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            <i class="fas fa-flask mr-2"></i> Ciência
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-green-800 mb-2">Laboratórios</h3>
+                        <p class="text-gray-600 mb-4">
+                            Laboratórios equipados com tecnologia de ponta para práticas de química, física, biologia e informática, com toda a segurança necessária.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Equipamentos Modernos</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Segurança</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Computadores</span>
+                        </div>
+                        <a href="#" class="text-green-600 font-medium hover:text-green-800 inline-flex items-center">
+                            Ver mais fotos <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Biblioteca -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1521587760476-6c2aef1185f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Biblioteca" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            <i class="fas fa-book mr-2"></i> Conhecimento
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-green-800 mb-2">Biblioteca</h3>
+                        <p class="text-gray-600 mb-4">
+                            Espaço amplo e silencioso com vasto acervo de livros, periódicos e recursos digitais, além de áreas de estudo individuais e em grupo.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">+10.000 Livros</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Acesso Digital</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Estudo em Grupo</span>
+                        </div>
+                        <a href="#" class="text-green-600 font-medium hover:text-green-800 inline-flex items-center">
+                            Ver mais fotos <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quadra Desportiva -->
+                <div id="quadra" class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Quadra Desportiva" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            <i class="fas fa-running mr-2"></i> Desporto
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-green-800 mb-2">Quadra Desportiva</h3>
+                        <p class="text-gray-600 mb-4">
+                            Quadra poliesportiva coberta para prática de basquete, vôlei, futsal e outras modalidades, com arquibancadas e vestiários completos.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Coberta</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Vestiários</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Arquibancadas</span>
+                        </div>
+                        <a href="#" class="text-green-600 font-medium hover:text-green-800 inline-flex items-center">
+                            Ver mais fotos <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Direção -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1636&q=80" 
+                             alt="Direção" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            <i class="fas fa-user-tie mr-2"></i> Administração
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-green-800 mb-2">Direção e Secretaria</h3>
+                        <p class="text-gray-600 mb-4">
+                            Espaço moderno e organizado para atendimento aos alunos e pais, com salas de reunião e gabinetes para a direção e coordenação pedagógica.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Atendimento</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Reuniões</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Acessibilidade</span>
+                        </div>
+                        <a href="#" class="text-green-600 font-medium hover:text-green-800 inline-flex items-center">
+                            Ver mais fotos <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Cantina -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                             alt="Cantina" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            <i class="fas fa-utensils mr-2"></i> Alimentação
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-green-800 mb-2">Cantina e Refeitório</h3>
+                        <p class="text-gray-600 mb-4">
+                            Espaço amplo e higienizado para refeições, com opções saudáveis e variadas, seguindo todas as normas de segurança alimentar.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Alimentação Saudável</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Capacidade 200+</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Área Externa</span>
+                        </div>
+                        <a href="#" class="text-green-600 font-medium hover:text-green-800 inline-flex items-center">
+                            Ver mais fotos <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Destaque -->
+    <section class="py-16 bg-green-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-6">Infraestrutura que Inspira</h2>
+                    <p class="text-gray-700 mb-6">
+                        Nossa instituição investe continuamente em infraestruturas de qualidade para criar ambientes que estimulam a aprendizagem, a criatividade e o desenvolvimento integral dos alunos.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-green-600 text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-green-800 mb-1">Espaços Modernos</h4>
+                                <p class="text-gray-600">Salas equipadas com tecnologia de última geração para ensino eficaz.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-600 text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-green-800 mb-1">Segurança Garantida</h4>
+                                <p class="text-gray-600">Sistema de vigilância e controle de acesso para proteção de todos.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-600 text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-green-800 mb-1">Acessibilidade</h4>
+                                <p class="text-gray-600">Estrutura adaptada para garantir inclusão e mobilidade a todos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="bg-white p-2 rounded-xl shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
+                             alt="Estudantes na instituição" class="w-full h-auto rounded-lg">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-green-600 text-white p-6 rounded-full shadow-lg pulse">
+                        <i class="fas fa-heart text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Fotos -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Galeria de Fotos</h2>
+                <div class="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Explore nossa galeria e veja mais detalhes dos espaços que compõem nossa instituição.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="relative group overflow-hidden rounded-lg h-48">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Biblioteca" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-green-800 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-medium">Biblioteca</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg h-48">
+                    <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
+                         alt="Laboratório" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-green-800 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-medium">Laboratório</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg h-48">
+                    <img src="https://images.unsplash.com/photo-1540206395-68808572332f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1526&q=80" 
+                         alt="Quadra" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-green-800 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-medium">Quadra</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg h-48">
+                    <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                         alt="Auditório" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-green-800 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-medium">Auditório</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg h-48">
+                    <img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1588&q=80" 
+                         alt="Sala de Aula" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-green-800 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-medium">Sala de Aula</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg h-48">
+                    <img src="https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Área Externa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-green-800 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-medium">Área Externa</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg h-48">
+                    <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Cantina" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-green-800 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-medium">Cantina</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg h-48">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Mais fotos" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-green-800 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-medium">Ver Mais</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+                    Ver Galeria Completa <i class="fas fa-images ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-green-800 text-white pt-16 pb-8" >
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-green-800 font-bold text-xl mb-4">
+                        NI
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Nossa Instituição</h3>
+                    <p class="text-green-200">
+                        Comprometidos com a excelência educacional e formação integral de nossos alunos.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Úteis</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-green-200 hover:text-white">Início</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white">Sobre Nós</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white">Infraestruturas</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white">Cursos</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white">Contactos</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contactos</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-green-300"></i>
+                            <span class="text-green-200">Av. da Instituição, 123</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-green-300"></i>
+                            <span class="text-green-200">+244 123 456 789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-green-300"></i>
+                            <span class="text-green-200">info@nossainstituicao.ao</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Redes Sociais</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-green-700 hover:bg-green-600 rounded-full flex items-center justify-center">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-green-700 hover:bg-green-600 rounded-full flex items-center justify-center">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-green-700 hover:bg-green-600 rounded-full flex items-center justify-center">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-green-700 hover:bg-green-600 rounded-full flex items-center justify-center">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-green-700 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-green-300 text-sm mb-4 md:mb-0">
+                        &copy; 2023 Nossa Instituição. Todos os direitos reservados.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-green-300 hover:text-white text-sm">Termos de Uso</a>
+                        <a href="#" class="text-green-300 hover:text-white text-sm">Política de Privacidade</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-green-600 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Slider automático
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider button');
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        // Configura o slider para mudar a cada 5 segundos
+        setInterval(nextSlide, 5000);
+        
+        // Adiciona event listeners para os controles
+        document.querySelector('.slider button:nth-child(4)').addEventListener('click', () => showSlide(currentSlide - 1));
+        document.querySelector('.slider button:nth-child(5)').addEventListener('click', nextSlide);
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+        
+        // Botão Voltar ao Topo
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Animação de scroll para as seções
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Adiciona animação de slide-in aos elementos quando eles aparecem na tela
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('.card-hover').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

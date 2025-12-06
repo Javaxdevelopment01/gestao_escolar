@@ -1,0 +1,98 @@
+@import url(../includes/cores_fontes.css);
+@media screen and (min-width:768px) and (max-width:992px) {/*tablets*/
+    main.activo {
+    width: 700px;
+    height: 500px;
+ 
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+ 
+    box-shadow: 0px 0px 77px #dfdfdf;
+    margin: 50px auto;
+    overflow: hidden;
+
+ 
+   
+    }
+
+    main .info {
+
+    display: grid;  
+    height: 100%;
+    width: 40%;
+    float: right;
+background-image: url(../../_images/auth/img-login.jpg);
+background-size: cover;
+        background-position: center center;
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+color: #fff;
+    }
+    main .info .card{
+      
+     
+        height: 100%;
+        padding: 20px;
+        text-align: center;
+       
+    }
+    main .info .card p{
+    margin-top: 10px;
+    }
+    main .info .card strong{
+
+            font-size: 12pt;
+            font-weight: 200;
+            color: rgb(255, 255, 255);
+ 
+    }
+    .info h3{
+     
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 100;
+        color: #fff;
+    }
+    main .login {
+        padding: 0;
+        margin: 0;
+        display: block;
+        width: 60%;
+        background-color: transparent;
+        
+        float: left;
+        position: relative;
+        box-shadow: none;
+     
+    }
+    
+ 
+    main .login .formulario {
+    
+      
+     
+    
+    }
+    main .login .formulario form{
+      
+        
+    }
+    main .login .formulario form .campo{
+  
+    }
+    main .login .formulario form .campo input,label{
+     
+    }
+    main .login .formulario form .campo label{
+       
+    }
+    main .login .formulario form .campo input{
+  
+    }
+    main .login .formulario form .campo input::placeholder{
+ 
+    }
+    main .login .formulario form .campo button{
+ 
+     
+        
+    }
+}

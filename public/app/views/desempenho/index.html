@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desempenho - Gestão Escolar</title>
+  <link rel="stylesheet" href="../../../assets/_css/desempenho/desempenho.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="../SGE/public/assets/_images/logo_ipm2.png" alt="Logo">
+      <h2>Gestão Escolar</h2>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="../dashboards/"><i class="fas fa-chart-line"></i> Dashboard</a>
+      <h3 class="menu-title">Gestão Acadêmica</h3>
+      <a href="../aluno/"><i class="fas fa-user-graduate"></i> Alunos</a>
+      <a href="../professor/"><i class="fas fa-user-tie"></i> Professores</a>
+      <a href="../turma/"><i class="fas fa-users"></i> Turmas</a>
+      <a href="../disciplina/"><i class="fas fa-book"></i> Disciplinas</a>
+      <a href="../horario/"><i class="fas fa-calendar-alt"></i> Horários</a>
+
+      <h3 class="menu-title">Notas & Avaliações</h3>
+      <a href="../nota/index.php"><i class="fas fa-clipboard-check"></i> Lançar Notas</a>
+      <a href="../pauta/"><i class="fas fa-eye"></i> Ver Pauta</a>
+      <a href="../boletim/"><i class="fas fa-certificate"></i> Boletins</a>
+
+      <h3 class="menu-title">Infraestrutura & Pessoal</h3>
+      <a href="../sala/"><i class="fas fa-building"></i> Salas & Blocos</a>
+      <a href="../funcionario/"><i class="fas fa-user-cog"></i> Funcionários</a>
+
+      <h3 class="menu-title">Desempenho & Relatórios</h3>
+      <a href="../desempenho/"><i class="fas fa-chart-bar"></i> Desempenho</a>
+      <a href="../relatorio/" class="active"><i class="fas fa-chart-pie"></i> Relatórios</a>
+ 
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div class="search-box">
+        <input type="text" placeholder="Pesquisar...">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="topbar-icons">
+        <i class="fas fa-bell"></i>
+        <i class="fas fa-envelope"></i>
+        <img src="../SGE/public/assets/_images/logo_ipm2.png" alt="User" class="user-pic">
+      </div>
+    </header>
+
+    <section class="content">
+      <h1>Desempenho</h1>
+
+      <div class="charts-container">
+        <div class="chart-card">
+          <h3>Melhores Alunos</h3>
+          <canvas id="alunosChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Melhores Professores</h3>
+          <canvas id="professoresChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Diretores</h3>
+          <canvas id="diretoresChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Outros Funcionários</h3>
+          <canvas id="outrosChart"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../../../assets/_js/desempenho/desempenho.js"></script>
+</body>
+</html>

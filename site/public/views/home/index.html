@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Instituto Politécnico - Página Inicial</title>
+  <style>
+    *{margin:0;padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;}
+
+    body{background:#ffffff;
+      color:#333;
+      line-height:1.6;}
+
+    h2{color:#032403;
+      text-align:center;
+      margin-bottom:25px;font-size:2em;}
+  /* HEADER */
+    header{background:#1b7f3a;color:#fff;padding:10px 40px;position:sticky;top:0;z-index:1000;box-shadow:0 3px 8px rgba(0,0,0,0.2);display:flex;align-items:center;justify-content:space-between;}
+    header .logo{display:flex;align-items:center;gap:10px;}
+    header .logo img{height:50px;border-radius:8px;}
+    header .logo h1{font-size:1.0em;}
+    nav{display:flex;gap:20px;flex-wrap:wrap;}
+    nav a{color:#fff;text-decoration:none;padding:8px 15px;border-radius:20px;transition:0.3s;}
+    nav a:hover{background:#fff;color:#1b7f3a;}
+
+     /* SLIDER */
+
+    .slider{width:100%;height:450px;position:relative;overflow:hidden;}
+    
+    .slider img{width:100%;
+      height:100%;
+      object-fit:cover;
+      position: absolute;
+      opacity: 0;
+  transition: opacity 2s ease-in-out; /* deixei mais lento e suave */
+    }
+    .slider img.active{
+      display:block;
+      opacity: 1;
+  z-index: 1;
+    }
+
+    .slider .overlay {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0, 0, 0, 0.295);
+  display:flex;
+  align-items:center;
+  justify-content:left;
+  flex-direction:column;
+  color:#fff;
+  text-align:left;
+  z-index: 2; /* 🔥 Isso garante que o texto fica sempre acima */
+}
+
+   
+    .slider h1{font-size:4.0em;margin-bottom:10px;color:#ffffff;text-align: left;}
+  
+    .slider h4{font-size:1.5em;margin-bottom:10px;color:#b0ffc9;text-align: center;}
+    
+ /* span do texto animado */
+#slider-text {
+  font-size: 3.5em;
+  font-weight: bold;
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(100vw); /* começa fora da tela, à direita */
+  transition: all 1s ease-out; /* tempo da animação */
+}
+
+#slider-text.show {
+  opacity: 1;
+  transform: translateX(0); /* posição final */
+}
+
+    /* CURSOS */
+    .cursos{padding:50px 40px;background:#f8f8f8;}
+    .cursos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;}
+    .curso{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.1);transition:0.3s;}
+    .curso:hover{transform:translateY(-8px);box-shadow:25px 20px 35px #c3ddc3;}
+    .curso img{width:100%;height:200px;object-fit:cover;}
+    .curso-content{padding:20px;}
+    .curso-content h3{color:#032403;margin-bottom:10px;}
+
+    /* ATIVIDADES */
+    .atividades{padding:50px 40px;background:#fff;}
+    .atividades-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+    .atividade{background:#f8f8f8;border-radius:15px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,0.1);transition:0.3s;}
+    .atividade:hover{transform:translateY(-15px);box-shadow:3px 10px 10px #c3ddc3;}
+    .atividade img{width:100%;height:300px;object-fit:cover;}
+    .atividade div{padding:15px;}
+
+    /* VANTAGENS */
+    .vantagens{padding:50px;background:#f0fff0;}
+    .vantagens-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+    .vantagem{background:#c3ddc3;padding:20px;border-radius:15px;box-shadow:0 3px 10px rgba(235, 231, 231, 0.1);}
+    .vantagem img{width:100%;height:150px;object-fit:cover;border-radius:10px;margin-bottom:10px;}
+    .vantagem h3{color: rgb(2, 2, 2);}
+    .vantagem p{color: rgb(7, 7, 7);}
+
+    /* PORQUE ESTUDAR */
+    .porque{padding:50px;background:#c3ddc3;color:#070707;}
+    .porque-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;
+      align-items:center;}
+    .porque p{font-size: 16px;}
+    .porque img{width:100%;border-radius:15px;object-fit:cover;height: 70%;}
+    .porque h2{color: #1b7f3a}
+
+    /* PORQUE ESTUDAR */
+    .porque1{padding:50px;background:#c3ddc3;color:#050505;}
+    .porque-content1{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;align-items:center;}
+    .porque1 img{width:100%;border-radius:15px;object-fit:cover;height: 70%;}
+     .porque1 h2{color: #1b7f3a;}
+
+
+      
+
+
+
+    /* DESTAQUES */
+    .destaques{padding:50px 40px;background:#fff;text-align:center;}
+    .destaques-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+    .card{background:#f8f8f8;padding:25px;border-radius:15px;box-shadow:0 3px 10px rgba(0,0,0,0.1);}
+    .card:hover{background:#e6ffe6;transform:translateY(-5px);}
+
+    /* FOOTER */
+    footer{background:#1b7f3a;color:#fff;text-align:center;padding:20px;}
+
+
+    
+    /* RESPONSIVIDADE */
+    @media(max-width:768px){
+      header{flex-direction:column;align-items:flex-start;}
+      header .logo h1{font-size:1em;}
+      nav{justify-content:flex-start;gap:10px;}
+      .slider{height:300px;}
+      .slider h1{font-size:1.5em;}
+      .slider h4{font-size:0.9em;}
+      .slider span{font-size:1.3em;}
+    }
+
+    @media(max-width:480px){
+      nav a{padding:6px 10px;font-size:0.85em;}
+      .slider{height:220px;}
+      .slider h1{font-size:1.2em;}
+      .slider h4{font-size:0.9em;}
+      .slider span{font-size:1em;}
+      .atividade img{height:200px;}
+      .vantagem img{height:120px;}
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="../img/logo_ipm.png" alt="Logo">
+      <h1>Instituto Politécnico  Maiombe - 3050 - IPM</h1>
+    </div>
+      <!-- Botão Hamburguer -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <nav id="menu">
+      <a href="#">Home</a>
+      <a href="../news/index.html">Notícias</a>
+      <a href="../library/">Bibliotecas</a>
+      <a href="../inscricoes/index.html">Inscrição</a>
+      <a href="../infraestrutura/index.html">Infraestruturas</a>
+      <a href="../professores/index.html">Professores</a>
+      <a href="../auth/index.php">Login</a>
+    </nav>
+  </header>
+
+  <!-- SLIDER -->
+  <div class="slider">
+    <img src="../img/foto-imp.jpg" class="active">
+    <img src="../img/glenn-carstens-peters-npxXWgQ33ZQ-unsplash2.jpg">
+    <img src="../img/modern-equipped-computer-lab_23-2149241200.jpg">
+    <img src="../img/eu.JPG">
+    <img src="../img/leonelpe.JPG">
+    <img src="../img/sala1.JPG">
+    <img src="../img/eltonborco.JPG">
+    <img src="../img/naescola.JPG">
+    <img src="../img/leonelfixe.JPG">
+    <img src="../img/eltonfixe.JPG">
+ 
+
+    <div class="overlay">
+      <h1 >Instituto Politécnico do Maiombe</h1>
+    <h4>Transformando Vidas Através da Educação <br>
+       O IPM oferece formação técnica e profissional de qualidade para<br> capacitar os jovens de Angola para o mercado de trabalho.</h4>
+      <span id="slider-text"></span>
+
+
+<a class="btn-flutuant" 
+   href="inscricao.html" 
+   style="background:#fff;
+          color:#006600;
+          text-decoration:none;
+          padding:8px 15px;
+          border-radius:20px;
+          transition:0.3s;
+          font-size:20px;
+          font-weight:bold;">
+  inscreva-se já
+</a>
+
+    </div>
+  </div>
+
+    <!-- PORQUÊ ESTUDAR -->
+  <section class="porque1">
+    <h2>Porquê Estudar na Nossa Instituição?</h2>
+    <div class="porque-content1">
+      <div>
+        <p style="font-size: 35px;">Excelência em Educação Técnica e Profissional <br> <br>
+          <p style="font-size: 17px;font-family: Arial, Helvetica, sans-serif;">O Instituto Politécnico do Maiombe (IPM) é uma instituição de Ensino Médio Técnico Profissional comprometida com a formação de técnicos e profissionais altamente qualificados para atender às demandas do mercado de trabalho angolano,incentivando e melhorando a sua aproximação com o mundo de trabalho, dotando eles de conhecimentos e valores.</p>
+<br><br><br>
+<p style="font-size: 22px;">Fundado em 2010, o IPM já formou mais de 5.000 profissionais em diversas áreas técnicas, contribuindo para o desenvolvimento econômico e social do país.</p>
+
+</p>
+   
+      </div>
+      <img src="../img/foto-IMP2.jpg">
+    </div>
+  </section>
+
+  <!-- CURSOS -->
+  <section class="cursos">
+    <h2>Nossos Cursos</h2>
+    <div class="cursos-grid">
+      <div class="curso">
+        <img src="../img/sala.JPG">
+        <div class="curso-content">
+          <h3>Informática</h3>
+          <p>O curso de Informática oferece formação completa em hardware, software, redes e programação. O estudante aprende desde a montagem e manutenção de computadores até ao desenvolvimento de sistemas e websites modernos. </p>
+          <p><b>Saídas:</b> Programador, Analista de Sistemas, Técnico de Redes, Suporte Técnico, Administrador de TI.</p>
+        </div>
+      </div>
+      <div class="curso">
+        <img src="../img/contabilista.JPG">
+        <div class="curso-content">
+          <h3>Contabilidade de Gestão</h3>
+          <p>Forma profissionais capazes de gerir e controlar finanças empresariais. O estudante aprende sobre balanços, auditoria, fiscalidade e tomada de decisão com base em dados contábeis.</p>
+          <p><b>Saídas:</b> Contabilista, Auditor, Analista Financeiro, Consultor de Gestão.</p>
+        </div>
+      </div>
+      <div class="curso">
+        <img src="../img/naescola.JPG">
+        <div class="curso-content">
+          <h3>Gestão Empresarial</h3>
+          <p>Capacita os estudantes em liderança, recursos humanos, marketing e estratégias empresariais. Desenvolve competências para criar, gerir e expandir negócios competitivos.</p>
+          <p><b>Saídas:</b> Gestor de Empresas, Administrador, Consultor de Negócios, Empreendedor.</p>
+        </div>
+      </div>
+      <div class="curso">
+        <img src="../img/sala1.JPG">
+        <div class="curso-content">
+          <h3>Informática de Gestão</h3>
+          <p>Une tecnologia e administração, formando profissionais capazes de usar sistemas informáticos para apoiar a gestão empresarial. O aluno aprende a gerir dados, desenvolver relatórios e integrar TI na tomada de decisão.</p>
+          <p><b>Saídas:</b> Gestor de Sistemas, Analista de Negócios, Consultor em TI, Administrador de Dados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATIVIDADES RECENTES -->
+  <section class="atividades">
+    <h2>Atividades Recentes</h2>
+    <div class="atividades-grid">
+      <div class="atividade"><img src="../img/1714333690313.jpg">
+        <div><h3>Feira de Ciência 2025</h3></div>
+        <h5>Uma nova era para a Província do Icolo e Bengo</h5>
+    </div>
+      <div class="atividade"><img src="../img/eltonborco.JPG"><div><h3>Workshop de Programação</h3></div></div>
+      <div class="atividade"><img src="../img/leonelfixe.JPG"><div><h3>Semana da Contabilidade</h3></div></div>
+      <div class="atividade"><img src="../img/eu.JPG"><div><h3>Encontro de Empresários</h3></div></div>
+      <div class="atividade"><img src="../img/leonelpe.JPG"><div><h3>Palestra Motivacional</h3></div></div>
+      <div class="atividade"><img src="../img/naescola.JPG"><div><h3>Visita a Empresas Parceiras</h3></div></div>
+      <div class="atividade"><img src="../img/sala.JPG"><div><h3>Campeonato de Robótica</h3></div></div>
+      <div class="atividade"><img src="../img/sala1.JPG"><div><h3>Formatura dos Finalistas</h3></div></div>
+    </div>
+  </section>
+
+  <!-- VANTAGENS -->
+  <section class="vantagens">
+    <h2>Vantagens de Fazer um Curso Técnico</h2>
+    <div class="vantagens-list">
+      <div class="vantagem"><img src="../img/sala1.JPG"><h3>Entrada Rápida no Mercado</h3><p>Os cursos técnicos permitem ao estudante começar a trabalhar mais cedo e com grande procura no mercado.</p></div>
+      <div class="vantagem"><img src="../img/sala.JPG"><h3>Formação Prática</h3><p>Aulas com foco em prática e experiência real.</p></div>
+      <div class="vantagem"><img src="../img/eltonborco.JPG"><h3>Menor Custo</h3><p>Cursos técnicos têm investimento menor comparado ao ensino superior.</p></div>
+      <div class="vantagem"><img src="../img/leonelpe.JPG"><h3>Base para Faculdade</h3><p>Um curso técnico também é uma porta de entrada para a universidade.</p></div>
+    </div>
+  </section>
+
+  <!-- PORQUÊ ESTUDAR -->
+  <section class="porque">
+    <h2>Porquê Estudar na Nossa Instituição?</h2>
+    <div class="porque-content">
+      <div>
+        <p>✔ Professores qualificados e experientes</p>
+        <p>✔ Salas modernas e bem equipadas</p>
+        <p>✔ Laboratórios de informática de última geração</p>
+        <p>✔ Estágios garantidos em empresas parceiras</p>
+        <p>✔ Rede de ex-alunos bem-sucedidos</p>
+        <p>✔ Actvidades esportivas e culturais variadas</p>
+        <p>✔ Ambiente Acolhedor e incluvo para alunos e familiares </p>
+        <p>✔ Parcerias e Eventos que aproximam a escola da comunidade</p>
+        <p>✔ Incentivo ao empreendedorismo , inovaç]ao e uso da tecnologia</p>
+        <p>✔ Desenvolvimento de competências que serão úteis no mercado de trabalho</p>
+        <p>✔ Metodologias modernas que estimulam o pensamento crítico e a criatividade</p>
+        <p>✔ Desenvolvimento pessoal, incentivo a leitura, esportes e ciências</p>
+        <p>✔ Projectos extracurriculares que desenvolvem talentos e habilidades</p>
+        <p>✔ O Aluno adopta grandes habilidades de se comunicar fluentemente</p>
+        <p>✔ Preparação para exames nacionais e ingressos a Universidades</p>
+      </div>
+      <img src="../img/eltonborco.JPG">
+    </div>
+  </section>
+
+  <!-- DESTAQUES -->
+  <section class="destaques">
+    <h2>Destaques do Instituto</h2>
+    <div class="destaques-grid">
+      <div class="card"><h3>+1000 Alunos Formados</h3><p>Profissionais de sucesso no mercado nacional e internacional.</p></div>
+      <div class="card"><h3>Salas Modernas</h3><p>Ambientes equipados para melhor aprendizagem.</p></div>
+      <div class="card"><h3>Professores Qualificados</h3><p>Docentes com experiência e dedicação.</p></div>
+      <div class="card"><h3>Laboratórios Avançados</h3><p>Tecnologia de ponta ao serviço dos alunos.</p></div>
+    </div>
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 Instituto Politécnico - Todos os direitos reservados.</p>
+  </footer>
+
+
+  <script>
+  // SLIDER AUTOMÁTICO
+  const slides = document.querySelectorAll(".slider img");
+  const texts = [
+    "O Melhor Instituto do Icolo e Bengo",
+    "Excelência em Educação Técnica",
+    "Professores Qualificados",
+    "Laboratórios Modernos",
+    "Estágios Garantidos",
+    "Alunos Preparados para o Futuro"
+  ];
+  const textElement = document.getElementById("slider-text");
+  let index = 0;
+  let textIndex = 0;
+
+  function showSlide(n) {
+    slides.forEach((img, i) => img.classList.toggle("active", i === n));
+  }
+
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+
+    // remover a classe pra resetar animação
+    textElement.classList.remove("show");
+
+    // esperar um pouco e trocar o texto
+    setTimeout(() => {
+      textIndex = (textIndex + 1) % texts.length;
+      textElement.textContent = texts[textIndex];
+      textElement.classList.add("show");
+    }, 200);
+  }
+
+  // inicializar
+  showSlide(index);
+  textElement.textContent = texts[textIndex];
+  textElement.classList.add("show");
+
+  setInterval(nextSlide, 5000);
+</script>
+
+</body>
+</html>

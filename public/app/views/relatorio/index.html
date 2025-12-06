@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatórios - Gestão Escolar</title>
+  <link rel="stylesheet" href="../../../assets/_css/desempenho/desempenho.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Sidebar completa -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="../SGE/public/assets/_images/logo_ipm2.png" alt="Logo">
+      <h2>Gestão Escolar</h2>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="../dashboards/"><i class="fas fa-chart-line"></i> Dashboard</a>
+      <h3 class="menu-title">Gestão Acadêmica</h3>
+      <a href="../aluno/"><i class="fas fa-user-graduate"></i> Alunos</a>
+      <a href="../professor/"><i class="fas fa-user-tie"></i> Professores</a>
+      <a href="../turma/"><i class="fas fa-users"></i> Turmas</a>
+      <a href="../disciplina/"><i class="fas fa-book"></i> Disciplinas</a>
+      <a href="../horario/"><i class="fas fa-calendar-alt"></i> Horários</a>
+
+      <h3 class="menu-title">Notas & Avaliações</h3>
+      <a href="../nota/index.php"><i class="fas fa-clipboard-check"></i> Lançar Notas</a>
+      <a href="../pauta/"><i class="fas fa-eye"></i> Ver Pauta</a>
+      <a href="../boletim/"><i class="fas fa-certificate"></i> Boletins</a>
+
+      <h3 class="menu-title">Infraestrutura & Pessoal</h3>
+      <a href="../sala/"><i class="fas fa-building"></i> Salas & Blocos</a>
+      <a href="../funcionario/"><i class="fas fa-user-cog"></i> Funcionários</a>
+
+      <h3 class="menu-title">Desempenho & Relatórios</h3>
+      <a href="../desempenho/"><i class="fas fa-chart-bar"></i> Desempenho</a>
+      <a href="../relatorio/" class="active"><i class="fas fa-chart-pie"></i> Relatórios</a>
+ 
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div class="search-box">
+        <input type="text" placeholder="Pesquisar..." id="globalSearch">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="topbar-icons">
+        <i class="fas fa-bell"></i>
+        <i class="fas fa-envelope"></i>
+        <img src="../SGE/public/assets/_images/logo_ipm2.png" alt="User" class="user-pic">
+      </div>
+    </header>
+
+    <section class="content">
+      <h1>Relatórios</h1>
+
+      <div class="filters">
+        <select id="selectTipoRelatorio">
+          <option value="">Seleciona Tipo de Relatório</option>
+          <option value="Alunos">Alunos</option>
+          <option value="Professores">Professores</option>
+          <option value="Funcionarios">Funcionários</option>
+          <option value="Salas">Salas</option>
+        </select>
+
+        <input type="date" id="dataInicio" placeholder="Data Início">
+        <input type="date" id="dataFim" placeholder="Data Fim">
+
+        <select id="selectCursoTurma">
+          <option value="">Seleciona Curso/Turma</option>
+          <option value="10A">10A</option>
+          <option value="10B">10B</option>
+          <option value="11A">11A</option>
+          <option value="12C">12C</option>
+        </select>
+
+        <button class="btn-add" id="gerarRelatorio"><i class="fas fa-file-alt"></i> Gerar Relatório</button>
+      </div>
+
+      <div class="export-buttons">
+        <button class="btn-add" id="exportPDF"><i class="fas fa-file-pdf"></i> Exportar PDF</button>
+        <button class="btn-add" id="exportXLS"><i class="fas fa-file-excel"></i> Exportar Excel</button>
+      </div>
+
+      <table id="relatorioTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Função/Curso</th>
+            <th>Data</th>
+            <th>Detalhes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dados carregados pelo JS -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+  <script src="../../../assets/_js/desempenho/desempenho.js"></script>
+</body>
+</html>

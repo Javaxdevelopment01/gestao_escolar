@@ -1,0 +1,154 @@
+@import url(cores_fontes.css);
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+#fathser-dialog{
+ opacity: 0.5;
+ transform: translateY(-10px);
+ 
+ transition: all .3s ease-in-out;
+}
+#fathser-dialog.c{
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+     z-index: 10;
+     opacity: 1;
+     transform: translateY(0px);
+    background-color: #0f0f0f1e;
+}
+dialog{
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 50px var(--bs-secondary);
+    height: 400px;
+    width: 300px;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+ overflow: hidden;
+}
+dialog .data-user{
+    display: grid;
+    gap: 5px;
+    height: 100%;
+    grid-template-rows: 60% auto;
+    
+}
+dialog .data-user .info{
+    display: grid;
+    grid-template-rows:70% auto;
+  
+
+}
+dialog .data-user .info .img-user{
+ 
+display: flex;
+justify-content: center;
+
+}
+dialog .data-user .info .img-user img{
+    height: 90%;
+    margin: auto;
+    border-radius: 50%;
+    width: 150px;
+    box-shadow: 0px 0px 50px var(--bs-secondary);
+}
+dialog .data-user .info .info-user{
+ 
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+
+
+}
+
+dialog .data-user .option-user{
+    margin: 15px 10px;
+     
+    
+}
+
+dialog .data-user .option-user div{
+transition: all .5s ease-in-out;
+border-radius: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 40px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12pt;
+font-weight: 100;
+cursor: pointer;
+}
+dialog .data-user .option-user div:hover{
+    box-shadow: 0px 0px 10px var(--bs-secondary);
+}
+body>div{
+    display: none;
+}
+.card-logaout{
+    position: absolute;
+
+    top: 0;
+    background-color: #0f0f0f1e;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.card-logaout *{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+
+}
+.card-logaout .card{
+    background-color:#fff;
+    display: grid;
+    gap: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px var(--bs-secondary);
+    height: 100px;
+    padding: 10px;
+    z-index: 1;
+
+}
+.card-logaout .card .option{
+ 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+}
+.card-logaout .card .option span,.card-logaout .card .option a{
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: center;
+    color: #000;
+    text-decoration: none;
+    
+}
+.card-logaout .card .option span:hover{
+    background-color: #0f0f0f1e;
+}
+.card-logaout .card .option a:hover{
+    
+    background-color: #0f0f0f1e;
+}

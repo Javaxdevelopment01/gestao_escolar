@@ -1,0 +1,17 @@
+.show-plus{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.468);
+    width: 100%;
+    height: 100%;
+}
+.show-plus .card{
+    width: 500px;
+    margin: 10px auto;
+    height: 700px;
+    
+}
+.show-plus .card .card-header{
+    background-color: aqua;
+}
